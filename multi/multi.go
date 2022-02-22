@@ -6,7 +6,7 @@ import (
 )
 
 // Hello returns a greeting for the named person.
-func Hello(name string) (string, error) {
+func Hello(name, family string) (string, error) {
 	// If no name was given, return an error with a message.
 	if name == "" {
 		return "", errors.New("empty name")
@@ -14,6 +14,6 @@ func Hello(name string) (string, error) {
 
 	// If a name was received, return a value that embeds the name
 	// in a greeting message.
-	message := fmt.Sprintf("Hi, %v. Welcome!", name)
+	message := fmt.Sprintf("Hi, %v %v. Welcome!", name, family)
 	return message, nil
 }
